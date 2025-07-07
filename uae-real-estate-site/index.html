@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UAE Real Estate Market: H1 2025 Insights</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F8F8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .kpi-value {
+            font-weight: 900;
+            color: #00A6FB;
+        }
+        .kpi-label {
+            font-weight: 700;
+            color: #3E474F;
+        }
+        .section-title {
+            font-weight: 900;
+            color: #3E474F;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+        }
+        .flowchart-node {
+            background-color: #00A6FB;
+            color: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            font-weight: 700;
+            position: relative;
+        }
+        .flowchart-decision {
+            background-color: #FECD51;
+            color: #3E474F;
+            border-radius: 9999px;
+            padding: 1.5rem;
+            font-weight: 700;
+            border: 4px solid #3E474F;
+        }
+        .flowchart-path {
+            position: absolute;
+            background-color: #3E474F;
+            z-index: -1;
+        }
+        .llm-button {
+            background-color: #00A6FB;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 700;
+            transition: background-color 0.2s ease-in-out;
+            cursor: pointer;
+        }
+        .llm-button:hover {
+            background-color: #008CC9;
+        }
+        .input-field {
+            border: 1px solid #ccc;
+            border-radius: 0.375rem;
+            padding: 0.75rem;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+        .loading-spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #00A6FB;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 0.5rem;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-[#3E474F] text-white text-center py-12 px-4">
+        <h1 class="text-4xl md:text-6xl font-black mb-2">UAE Real Estate Market: H1 2025 Insights</h1>
+        <p class="text-xl md:text-2xl font-light max-w-4xl mx-auto">An analysis of the record-breaking growth across the Emirates, the forces driving demand, and the strategic outlook for investors.</p>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <section id="kpis" class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl section-title mb-8">H1 2025: A Market Redefined Across the UAE</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card">
+                    <p class="text-5xl md:text-6xl kpi-value">AED 327B+</p>
+                    <p class="text-lg kpi-label mt-2">Dubai Sales Value</p>
+                    <p class="mt-2 text-gray-600">A staggering 40% increase YoY, showcasing unprecedented investor confidence.</p>
+                </div>
+                <div class="card">
+                    <p class="text-5xl md:text-6xl kpi-value">AED 45B+</p>
+                    <p class="text-lg kpi-label mt-2">Abu Dhabi Sales Value (H1)</p>
+                    <p class="mt-2 text-gray-600">Strong growth driven by off-plan properties and international interest.</p>
+                </div>
+                <div class="card">
+                    <p class="text-5xl md:text-6xl kpi-value">AED 10.7B+</p>
+                    <p class="text-lg kpi-label mt-2">Sharjah Sales Value (Q1)</p>
+                    <p class="mt-2 text-gray-600">Remarkable 31.9% YoY growth, positioning Sharjah as a value alternative.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="performance" class="mb-16">
+             <h2 class="text-3xl md:text-4xl section-title mb-8 text-center">Emirate-Specific Performance & Micro-Market Highlights</h2>
+             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="card">
+                    <h3 class="text-2xl font-bold text-center mb-4">Dubai: Q2 2025 Sales Value by Property Type</h3>
+                     <p class="text-center text-gray-600 mb-6">Villa and Apartment sales dominated the market in the second quarter, highlighting strong demand in both luxury and residential sectors. Plot sales also showed remarkable growth, indicating developer confidence in future projects.</p>
+                    <div class="chart-container">
+                        <canvas id="propertyTypeChart"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 class="text-2xl font-bold text-center mb-4">Dubai: Median Property Price Growth (AED/sq.ft)</h3>
+                    <p class="text-center text-gray-600 mb-6">The median property price has seen a consistent and steep climb since 2021, reaching a new high in Q2 2025. This trend reflects the market's strong recovery and sustained appreciation in value.</p>
+                    <div class="chart-container">
+                        <canvas id="priceTrendChart"></canvas>
+                    </div>
+                </div>
+                <div class="card lg:col-span-2">
+                    <h3 class="text-2xl font-bold text-center mb-4">Abu Dhabi & Sharjah: Micro-Market Dynamics</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="text-xl font-bold text-[#00A6FB] mb-2">Abu Dhabi: Consistent Growth & Off-Plan Dominance</h4>
+                            <p class="text-gray-700 mb-2">Abu Dhabi recorded AED 28.39 billion in Q1 2025 transactions and AED 16.63 billion in Q2, with off-plan properties consistently outperforming ready units. Key areas like **Saadiyat Island** (leading transactions), **Yas Island**, and **Al Reem Island** are leading the surge, attracting significant foreign investment. **Mohammed Bin Zayed City** and **Al Hudayriyat Island** also saw strong activity. Expect ~8,500 new homes in 2025, nearly triple 2024 figures, indicating robust supply growth to meet demand.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-[#FECD51] mb-2">Sharjah: Value Alternative with Strong Appreciation</h4>
+                            <p class="text-gray-700 mb-2">Sharjah's real estate market saw AED 10.7 billion in transactions in Q1 2025, a 31.9% YoY increase. With a median residential price of AED 895,000 and rental yields of 6-9%, it offers a compelling value proposition, often 30-40% lower than Dubai for similar quality. Areas like **Al Majaz** (51.2% apartment price surge in 2024), **Muwailih Commercial**, and **Al Khan** are experiencing strong demand and appreciation. **Muwailih Commercial** ranked highest in trading value for Q1 2025.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="developer-performance" class="mb-16 text-center">
+            <h2 class="text-3xl md:text-4xl section-title mb-8">Leading Developer Performance & Key Considerations (H1 2025 Highlights)</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-700 mb-12">Major developers continue to drive market activity with strong sales and new project launches across the UAE. For investors, evaluating a developer's **delivery track record, construction quality, and post-handover service** is as crucial as their sales performance, ensuring long-term value and peace of mind.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-2">Emaar Properties</h3>
+                    <p class="text-4xl kpi-value">AED 19.3B</p>
+                    <p class="text-lg kpi-label mt-2">Q1 2025 Property Sales</p>
+                    <p class="mt-2 text-gray-600">A 42% increase YoY, demonstrating continued market leadership in Dubai. Renowned for iconic, high-quality developments and strong delivery history.</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-2">Aldar Properties</h3>
+                    <p class="text-4xl kpi-value">AED 8.9B</p>
+                    <p class="text-lg kpi-label mt-2">Q1 2025 Development Sales</p>
+                    <p class="mt-2 text-gray-600">Strong growth, with 87% of UAE sales from international and expat buyers. Known for shaping Abu Dhabi's landscape with sustainable projects.</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-2xl font-bold mb-2">Samana Developers</h3>
+                    <p class="text-4xl kpi-value">AED 1.1B</p>
+                    <p class="text-lg kpi-label mt-2">June 2025 Sales</p>
+                    <p class="mt-2 text-gray-600">Ranked 5th in off-plan sales H1 2025, with 86% of sales from foreign investors. Focus on affordable yet high-quality residences.</p>
+                </div>
+            </div>
+             <div class="card lg:col-span-3 mt-8">
+                <h3 class="text-2xl font-bold text-center mb-4">Other Key Developers (January 2025 Sales)</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
+                    <p class="text-gray-700"><strong>DAMAC Properties:</strong> AED 4.13 billion (Luxury real estate leader)</p>
+                    <p class="text-gray-700"><strong>Nakheel:</strong> AED 3.78 billion (Visionary coastal developments)</p>
+                    <p class="text-gray-700"><strong>Sobha Realty:</strong> AED 1.19 billion (Commitment to quality and craftsmanship)</p>
+                    <p class="text-gray-700"><strong>Dubai Properties:</strong> AED 1.03 billion (Creating diverse lifestyle destinations)</p>
+                    <p class="text-gray-700"><strong>Majid Al Futtaim:</strong> AED 853.88 million (Integrated communities and retail)</p>
+                    <p class="text-gray-700"><strong>Danube Properties:</strong> AED 761.54 million (Affordable, high-quality residences)</p>
+                    <p class="text-gray-700"><strong>Meraas:</strong> AED 717.13 million (Urban destinations with enriching experiences)</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="drivers" class="mb-16 text-center">
+            <h2 class="text-3xl md:text-4xl section-title mb-8">The Pillars of Growth: What's Fueling the UAE Boom?</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-700 mb-12">The UAE's real estate momentum is built on a powerful combination of population growth, wealth migration, and a business-friendly environment that attracts global capital across all emirates.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card">
+                    <p class="text-6xl mb-4">👥</p>
+                    <p class="text-4xl kpi-value">11.35M</p>
+                    <p class="text-lg kpi-label mt-2">UAE Population (June 2025)</p>
+                    <p class="mt-2 text-gray-600">Sustained population growth across the Emirates creates continuous, fundamental demand for housing.</p>
+                </div>
+                 <div class="card">
+                    <p class="text-6xl mb-4">💰</p>
+                    <p class="text-4xl kpi-value">9,800+</p>
+                    <p class="text-lg kpi-label mt-2">Millionaires Relocating (UAE)</p>
+                    <p class="mt-2 text-gray-600">A record net inflow of HNWIs in 2025, bringing an estimated $63 billion in new wealth to the UAE.</p>
+                </div>
+                 <div class="card">
+                    <p class="text-6xl mb-4">🌐</p>
+                    <p class="text-4xl kpi-value">$45B+</p>
+                    <p class="text-lg kpi-label mt-2">Foreign Direct Investment (Dubai)</p>
+                    <p class="mt-2 text-gray-600">A 48% YoY increase in FDI, cementing UAE's status as a top global destination for new projects.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="supply" class="mb-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="card">
+                    <h3 class="text-2xl font-bold text-center mb-4">Dubai: Projected New Homes (2025-2029)</h3>
+                    <p class="text-center text-gray-600 mb-6">While over 300,000 new homes are planned, the composition reveals a critical insight: apartments overwhelmingly dominate the supply pipeline, failing to meet the surging demand for larger, family-friendly villas.</p>
+                    <div class="chart-container h-80 md:h-96">
+                        <canvas id="supplyCompositionChart"></canvas>
+                    </div>
+                </div>
+                <div class="text-content px-4">
+                    <h2 class="text-3xl md:text-4xl section-title mb-4">The Villa Scarcity Across the UAE</h2>
+                    <p class="text-lg text-gray-700 mb-4">This supply-demand imbalance is a key driver of price appreciation in the villa segment across the UAE. In Dubai, only ~17% of upcoming supply is villas, driving prices up by 26% in 2024. Abu Dhabi also sees limited new villa supply, keeping pressure on prices for ready units.</p>
+                    <div class="bg-[#DC493A] text-white p-6 rounded-lg shadow-lg">
+                        <p class="text-2xl font-bold">A Seller's Market for Family Homes</p>
+                        <p class="mt-2">The chronic shortage of new villas across the UAE places existing owners in a powerful position and makes secondary market villas a prime investment target for strong capital appreciation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="correction" class="mb-16">
+             <h2 class="text-3xl md:text-4xl section-title mb-8 text-center">Correction or Consolidation? A UAE Perspective</h2>
+             <p class="max-w-3xl mx-auto text-lg text-gray-700 mb-12 text-center">Analysts forecast a potential 10-15% price moderation in some segments due to new supply, particularly in Dubai. However, the UAE market is fundamentally stronger and more resilient than in previous cycles, mitigating the risk of a severe downturn across the Emirates.</p>
+             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card border-t-4 border-[#DC493A]">
+                    <h3 class="text-xl font-bold mb-2">Healthier Balance Sheets</h3>
+                    <p>UAE banks and developers are significantly deleveraged. Real estate exposure in bank loan portfolios dropped to 14%, indicating greater systemic stability across the nation.</p>
+                </div>
+                <div class="card border-t-4 border-[#00A6FB]">
+                    <h3 class="text-xl font-bold mb-2">Resilient Demand Floor</h3>
+                    <p>Robust population growth, sustained HNWI migration to the UAE, and its "safe haven" status create a powerful and continuous demand buffer against price shocks.</p>
+                </div>
+                <div class="card border-t-4 border-[#FECD51]">
+                    <h3 class="text-xl font-bold mb-2">Proactive Governance</h3>
+                    <p>Strategic initiatives like the Dubai D33 Economic Agenda and Abu Dhabi's Vision 2030 provide a solid framework for long-term, sustainable growth across the UAE.</p>
+                </div>
+            </div>
+            <div class="card lg:col-span-3 mt-8">
+                <h3 class="text-2xl font-bold text-center mb-4">Geopolitical Resilience: The "Safe Haven" Effect</h3>
+                <p class="text-center text-gray-600 mb-6">The UAE's strategic political neutrality and economic stability allow it to act as a crucial "safe haven" during regional geopolitical tensions, such as the Iran-Israel conflict. This dynamic often leads to increased capital inflow, particularly from high-net-worth individuals seeking security and asset diversification.</p>
+                <p class="text-center text-gray-600">During the Israel-Iran conflict in early 2025, anecdotal evidence showed a **30-40% increase in inquiries from Middle Eastern HNWIs** for Dubai luxury residential and commercial properties, demonstrating a direct "flight to safety" of capital. This provides a powerful, distinctive buffer against broader economic headwinds.</p>
+            </div>
+        </section>
+
+        <section id="investment-strategy" class="mb-16">
+            <h2 class="text-3xl md:text-4xl section-title mb-8 text-center">What's Your Next Move? A Strategic Guide for the UAE</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-700 mb-12 text-center">The right strategy depends on your goals and the specific emirate. Navigate the opportunities and considerations for buying and selling in the UAE's dynamic market.</p>
+            <div class="card p-8">
+                 <div class="flex flex-col items-center space-y-8">
+                    <div class="flowchart-decision w-64 text-center">Should I invest now?</div>
+                    
+                    <div class="w-px h-8 bg-[#3E474F]"></div>
+
+                    <div class="w-full flex flex-col md:flex-row justify-around items-center md:items-start space-y-8 md:space-y-0 md:space-x-8">
+                        <div class="flex flex-col items-center space-y-4 w-full md:w-1/2">
+                            <div class="font-bold text-xl text-[#DC493A]">YES, I'M BUYING</div>
+                            <div class="w-px h-4 bg-[#DC493A]"></div>
+                            <div class="flowchart-node w-full bg-[#DC493A] text-white">Focus on High-Growth Areas & Value</div>
+                            <div class="w-px h-4 bg-[#3E474F]"></div>
+                            <div class="grid grid-cols-1 gap-4 w-full">
+                                <div class="bg-gray-100 p-4 rounded-lg text-center"><strong>Dubai Off-Plan:</strong> Capital gains & flexible payments in areas like Business Bay, Dubai South.</div>
+                                <div class="bg-gray-100 p-4 rounded-lg text-center"><strong>Dubai Secondary Villas/Townhouses:</strong> Immediate rental income & strong end-user demand (e.g., Jumeirah Golf Estates, Arabian Ranches).</div>
+                                <div class="bg-gray-100 p-4 rounded-lg text-center"><strong>Abu Dhabi Off-Plan:</strong> Yas Island, Saadiyat Island, Al Reem Island for modern community living.</div>
+                                <div class="bg-gray-100 p-4 rounded-lg text-center"><strong>Sharjah Value Properties:</strong> Muwailih Commercial, Al Majaz, Al Khan for affordability & appreciation (6-9% yields).</div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col items-center space-y-4 w-full md:w-1/2">
+                            <div class="font-bold text-xl text-[#00A6FB]">YES, I'M SELLING</div>
+                            <div class="w-px h-4 bg-[#00A6FB]"></div>
+                            <div class="flowchart-node w-full bg-[#00A6FB] text-white">Capitalize on Peak Demand & Scarcity</div>
+                            <div class="w-px h-4 bg-[#3E474F]"></div>
+                            <div class="grid grid-cols-1 gap-4 w-full">
+                                <div class="bg-gray-100 p-4 rounded-lg text-center"><strong>Highly Appreciated Dubai Assets:</strong> Prime villas (60% above 2014 peak), ultra-luxury properties (113% sales volume increase >AED10M).</div>
+                                <div class="bg-gray-100 p-4 rounded-lg text-center"><strong>Turnkey Properties (UAE-wide):</strong> Maximize value on move-in ready homes.</div>
+                                <div class="bg-gray-100 p-4 rounded-lg text-center"><strong>Abu Dhabi/Sharjah Prime Areas:</strong> Capitalize on strong demand in sought-after locations.</div>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                 <div class="mt-12 pt-8 border-t border-gray-200">
+                    <h3 class="text-2xl font-bold text-center mb-4">✨ Get Personalized Investment Advice ✨</h3>
+                    <p class="text-center text-gray-600 mb-6">Input your preferences below to receive AI-powered insights on your next move in the UAE real estate market.</p>
+                    <div class="max-w-xl mx-auto">
+                        <input type="text" id="propertyTypeInput" class="input-field" placeholder="e.g., villa, apartment, commercial">
+                        <input type="text" id="unitDetailsInput" class="input-field" placeholder="e.g., studio, 1 bedroom, 2 bedroom, 3 bedroom, 4+ bedroom">
+                        <input type="text" id="locationInput" class="input-field" placeholder="e.g., Palm Jumeirah (Dubai), Saadiyat Island (Abu Dhabi), Al Majaz (Sharjah)">
+                        <input type="text" id="developerInput" class="input-field" placeholder="e.g., Emaar, Aldar, Arada">
+                        <div class="mb-4">
+                            <label class="inline-flex items-center mr-6">
+                                <input type="radio" class="form-radio text-[#00A6FB]" name="propertyStatus" value="off-plan" checked>
+                                <span class="ml-2 text-gray-700">Off-Plan</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" class="form-radio text-[#00A6FB]" name="propertyStatus" value="ready">
+                                <span class="ml-2 text-gray-700">Ready Property</span>
+                            </label>
+                        </div>
+                        <input type="text" id="investmentHorizonInput" class="input-field" placeholder="e.g., short-term (1-3 years), long-term (5+ years)">
+                        <button id="generateAdviceBtn" class="llm-button w-full flex items-center justify-center">
+                            Generate Advice
+                            <span id="loadingSpinner" class="loading-spinner hidden"></span>
+                        </button>
+                        <div id="adviceOutput" class="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200 text-gray-700 hidden"></div>
+                    </div>
+                 </div>
+            </div>
+        </section>
+        
+        <footer class="bg-[#3E474F] text-white text-center py-12 px-4 mt-16 rounded-lg">
+             <h2 class="text-3xl md:text-4xl font-black mb-4">The Long-Term Vision for the UAE</h2>
+             <p class="text-lg md:text-xl font-light max-w-4xl mx-auto mb-8">Beyond the current cycle, the UAE's future is underpinned by ambitious government plans ensuring sustained growth and making it a premier global investment hub for decades to come.</p>
+             <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-12">
+                <p><strong class="text-3xl text-[#FECD51]">7.8M</strong> Dubai Population by 2040</p>
+                <p><strong class="text-3xl text-[#FECD51]">TOP 4</strong> Global Financial Hub by 2033</p>
+             </div>
+        </footer>
+
+    </main>
+    
+    <script>
+        const vibrantPalette = {
+            blue: '#00A6FB',
+            red: '#DC493A',
+            yellow: '#FECD51',
+            darkGray: '#3E474F',
+            lightGray: '#F8F8F8'
+        };
+
+        const chartDefaultOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        color: '#3E474F',
+                        font: {
+                            size: 14
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                              return label.join(' ');
+                            } else {
+                              return label;
+                            }
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    ticks: { color: '#3E474F' },
+                    grid: { color: '#e0e0e0' }
+                },
+                x: {
+                    ticks: { color: '#3E474F' },
+                    grid: { display: false }
+                }
+            }
+        };
+        
+        function wrapLabel(str, maxWidth) {
+            if (str.length <= maxWidth) return str;
+            const words = str.split(' ');
+            let lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if ((currentLine + ' ' + words[i]).length > maxWidth) {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                } else {
+                    currentLine += ' ' + words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        const propertyTypeCtx = document.getElementById('propertyTypeChart').getContext('2d');
+        new Chart(propertyTypeCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Plots', 'Villas', 'Apartments', 'Commercial Properties'],
+                datasets: [{
+                    label: 'Sales Value in AED Billions (Q2 2025)',
+                    data: [32.2, 66.5, 81.6, 3.6],
+                    backgroundColor: [vibrantPalette.blue, vibrantPalette.red, vibrantPalette.yellow, vibrantPalette.darkGray],
+                    borderColor: '#ffffff',
+                    borderWidth: 2
+                }]
+            },
+            options: chartDefaultOptions
+        });
+
+        const priceTrendCtx = document.getElementById('priceTrendChart').getContext('2d');
+        new Chart(priceTrendCtx, {
+            type: 'line',
+            data: {
+                labels: ['2021', '2024', 'Q2 2025'],
+                datasets: [{
+                    label: 'Median Price (AED/sq.ft)',
+                    data: [958, 1514, 1607],
+                    fill: true,
+                    backgroundColor: 'rgba(0, 166, 251, 0.2)',
+                    borderColor: vibrantPalette.blue,
+                    tension: 0.1,
+                    pointBackgroundColor: vibrantPalette.blue,
+                    pointRadius: 5
+                }]
+            },
+            options: chartDefaultOptions
+        });
+        
+        const supplyCompositionCtx = document.getElementById('supplyCompositionChart').getContext('2d');
+        new Chart(supplyCompositionCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Apartments', 'Villas'],
+                datasets: [{
+                    label: 'Projected New Homes by Type',
+                    data: [80.1, 17.4],
+                    backgroundColor: [vibrantPalette.blue, vibrantPalette.red],
+                    hoverOffset: 4
+                }]
+            },
+            options: { ...chartDefaultOptions, cutout: '60%' }
+        });
+
+        // Gemini API Integration for Investment Advice
+        const generateAdviceBtn = document.getElementById('generateAdviceBtn');
+        const propertyTypeInput = document.getElementById('propertyTypeInput');
+        const unitDetailsInput = document.getElementById('unitDetailsInput');
+        const locationInput = document.getElementById('locationInput');
+        const developerInput = document.getElementById('developerInput');
+        const propertyStatusRadios = document.getElementsByName('propertyStatus');
+        const investmentHorizonInput = document.getElementById('investmentHorizonInput');
+        const adviceOutput = document.getElementById('adviceOutput');
+        const loadingSpinner = document.getElementById('loadingSpinner');
+
+        generateAdviceBtn.addEventListener('click', async () => {
+            const propertyType = propertyTypeInput.value.trim();
+            const unitDetails = unitDetailsInput.value.trim();
+            const location = locationInput.value.trim();
+            const developer = developerInput.value.trim();
+            let propertyStatus = '';
+            for (const radio of propertyStatusRadios) {
+                if (radio.checked) {
+                    propertyStatus = radio.value;
+                    break;
+                }
+            }
+            const investmentHorizon = investmentHorizonInput.value.trim();
+
+            if (!propertyType || !unitDetails || !location || !developer || !propertyStatus || !investmentHorizon) {
+                adviceOutput.classList.remove('hidden');
+                adviceOutput.innerHTML = '<p class="text-red-600">Please fill in all fields to get advice.</p>';
+                return;
+            }
+
+            loadingSpinner.classList.remove('hidden');
+            generateAdviceBtn.disabled = true;
+            adviceOutput.classList.add('hidden');
+            adviceOutput.innerHTML = '';
+
+            const userData = {
+                propertyType,
+                unitDetails,
+                location,
+                developer,
+                propertyStatus,
+                investmentHorizon
+            };
+            
+            try {
+                // This is the corrected line, ensuring the URL is '/api/get-advice'
+                const response = await fetch('/api/get-advice', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(userData)
+                });
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || `Server error: ${response.statusText}`);
+                }
+
+                const result = await response.json();
+                
+                if (result.advice) {
+                    adviceOutput.innerHTML = `<p>${result.advice.replace(/\n/g, '<br>')}</p>`;
+                } else {
+                    throw new Error("Invalid response format from server.");
+                }
+
+            } catch (error) {
+                console.error('Error fetching advice:', error);
+                adviceOutput.innerHTML = `<p class="text-red-600">An error occurred while fetching advice. Please try again later.</p>`;
+            } finally {
+                loadingSpinner.classList.add('hidden');
+                generateAdviceBtn.disabled = false;
+                adviceOutput.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
